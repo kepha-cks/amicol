@@ -1,0 +1,1717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMICOL LAUNDRY MASTERS - Professional Laundry Services &amp; Products</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #0ea5e9;
+            --accent-light: #38bdf8;
+            --accent-glow: rgba(14, 165, 233, 0.3);
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #94a3b8;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --bg-elevated: #f1f5f9;
+            --border: #e2e8f0;
+            --white: #ffffff;
+            --success: #10b981;
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --radius-xl: 32px;
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -2px rgba(0,0,0,0.04);
+            --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+            --shadow-accent: 0 10px 40px -10px var(--accent-glow);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background-color: var(--bg-body);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        header.scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: var(--shadow-md);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+            transition: padding 0.3s ease;
+        }
+
+        header.scrolled .header-content {
+            padding: 12px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.25rem;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover .logo-icon {
+            transform: rotate(-5deg) scale(1.05);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 8px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 8px 16px;
+            border-radius: var(--radius-md);
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent);
+            background-color: var(--bg-elevated);
+        }
+
+        nav ul li a::after {
+            display: none;
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--primary);
+            background: none;
+            border: none;
+            padding: 8px;
+            border-radius: var(--radius-sm);
+            transition: background-color 0.2s ease;
+        }
+
+        .menu-toggle:hover {
+            background-color: var(--bg-elevated);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding-top: 100px;
+            position: relative;
+            overflow: hidden;
+            background: var(--primary);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(ellipse at 20% 50%, rgba(14, 165, 233, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 50%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 100%, rgba(6, 182, 212, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            opacity: 0.15;
+            background-image: url('amicol2.png');
+            background-size: cover;
+            background-position: center;
+            filter: blur(2px);
+        }
+
+        .hero-content {
+            max-width: 900px;
+            position: relative;
+            z-index: 1;
+            padding: 40px 20px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.15);
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 24px;
+            backdrop-filter: blur(10px);
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            animation: fadeInUp 0.8s ease 0.1s both;
+            background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.85) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2vw, 1.35rem);
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 400;
+            line-height: 1.7;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease 0.3s both;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px 32px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: none;
+            cursor: pointer;
+            box-shadow: var(--shadow-accent);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px -10px var(--accent-glow);
+        }
+
+        .btn-outline {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.25);
+            box-shadow: none;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary);
+            border-color: var(--white);
+        }
+
+        .btn-dark {
+            background: var(--primary);
+            box-shadow: none;
+        }
+
+        .btn-dark:hover {
+            background: var(--secondary);
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+
+        .section-title h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--bg-elevated) 0%, transparent 100%);
+            clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+            opacity: 0.5;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-text h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 24px;
+            line-height: 1.3;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: var(--radius-xl);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.03);
+        }
+
+        /* Mission Section */
+        .mission {
+            background: linear-gradient(180deg, var(--bg-body) 0%, var(--white) 100%);
+        }
+
+        .mission-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 60px 40px;
+            border-radius: var(--radius-xl);
+            background: var(--white);
+            box-shadow: var(--shadow-xl);
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mission-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-light));
+        }
+
+        .mission-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 24px;
+            background: linear-gradient(135deg, var(--bg-elevated), var(--white));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border);
+        }
+
+        .mission-icon i {
+            font-size: 2rem;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .mission-content p {
+            font-size: 1.2rem;
+            line-height: 1.9;
+            color: var(--text-secondary);
+        }
+
+        /* Products Section */
+        .products {
+            background-color: var(--bg-body);
+        }
+
+        .product-categories {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 50px;
+        }
+
+        .category-btn {
+            padding: 12px 24px;
+            background-color: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        .category-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background-color: rgba(14, 165, 233, 0.05);
+        }
+
+        .category-btn.active {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: var(--white);
+            border-color: transparent;
+            box-shadow: var(--shadow-accent);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .product-card {
+            background-color: var(--white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: transparent;
+        }
+
+        .product-image {
+            height: 220px;
+            background-color: var(--bg-elevated);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.08);
+        }
+
+        .product-info {
+            padding: 24px;
+        }
+
+        .product-info h3 {
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+            color: var(--primary);
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .product-info p {
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            font-size: 0.95rem;
+        }
+
+        .product-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background-color: var(--bg-elevated);
+            color: var(--text-secondary);
+            padding: 6px 12px;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid var(--border);
+        }
+
+        /* Services Section */
+        .services {
+            background: var(--white);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 24px;
+        }
+
+        .service-card {
+            background-color: var(--bg-body);
+            border-radius: var(--radius-lg);
+            padding: 36px;
+            border: 1px solid transparent;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-light));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover {
+            border-color: var(--border);
+            box-shadow: var(--shadow-lg);
+            background-color: var(--white);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card i {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .service-card h3 {
+            font-size: 1.35rem;
+            margin-bottom: 12px;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .service-card p {
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+
+        /* Why Choose Us Section */
+        .why-choose {
+            background: linear-gradient(180deg, var(--bg-body) 0%, var(--white) 100%);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .feature {
+            background-color: var(--white);
+            padding: 32px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+            border-color: transparent;
+        }
+
+        .feature i {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .feature:nth-child(1) i { color: #f59e0b; }
+        .feature:nth-child(2) i { color: #8b5cf6; }
+        .feature:nth-child(3) i { color: #10b981; }
+        .feature:nth-child(4) i { color: #3b82f6; }
+        .feature:nth-child(5) i { color: #ec4899; }
+        .feature:nth-child(6) i { color: #06b6d4; }
+
+        .feature h3 {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .feature p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--white);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 32px;
+            padding: 24px;
+            background: var(--bg-body);
+            border-radius: var(--radius-md);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: var(--white);
+            box-shadow: var(--shadow-md);
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--accent);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .contact-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 6px;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .contact-item p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .contact-form {
+            background: var(--bg-body);
+            padding: 40px;
+            border-radius: var(--radius-xl);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            font-family: inherit;
+            font-size: 1rem;
+            background: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-glow);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 130px;
+        }
+/* Floating Buttons */
+        .floating-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 999;
+        }
+
+        .floating-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* color: rgb(248, 5, 5); */
+            font-size: 1.6rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+            text-decoration: none;
+        }
+
+        .floating-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+        }
+
+        .whatsapp-btn {
+            background-color:#3be2aa;
+            color: #10b981;
+        }
+
+        .whatsapp-btn:hover {
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+        }
+
+        .location-btn {
+            background-color: white;
+            color: #ff4949;
+        }
+
+        .location-btn:hover {
+            box-shadow: 0 8px 25px rgba(234, 67, 53, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 80px 0 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1.5fr repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-column h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.25rem;
+            margin-bottom: 24px;
+            font-weight: 600;
+        }
+
+        .footer-brand p {
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column ul li a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: all 0.2s ease;
+            font-size: 0.95rem;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--white);
+            padding-left: 4px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-md);
+            color: var(--white);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+            border-color: var(--accent);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 24px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-bottom p {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            section {
+                padding: 80px 0;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .about-image {
+                order: -1;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 50px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                border-top: 1px solid var(--border);
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: var(--shadow-lg);
+            }
+
+            nav.active {
+                max-height: 500px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                padding: 16px 24px;
+                gap: 4px;
+            }
+
+            nav ul li a {
+                display: block;
+                padding: 12px 0;
+            }
+
+            .hero-content {
+                padding: 20px 0;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-outline {
+                margin-left: 0;
+            }
+
+            .products-grid,
+            .services-grid,
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .mission-content {
+                padding: 40px 24px;
+            }
+
+            .contact-form {
+                padding: 24px;
+            }
+
+            .product-categories {
+                gap: 8px;
+            }
+
+            .category-btn {
+                padding: 10px 18px;
+                font-size: 0.875rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#home" class="logo" style="display: flex; align-items: center;">
+                    <div class="logo-icon">
+                        <img src="logo1.jpg" alt="AMICOL"  style="width: 100px; height: 90px; border-style: solid; border-radius: 50%;"><nbsp>  </nbsp><nbsp>  </nbsp>
+                    </div>
+                </a>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#mission">Mission</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#why-choose">Why Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-sparkles"></i>
+                <b><font face="Arial">Amicol Laundry masters</font></b><br>Premium Quality Services
+            </div>
+            <h1>Professional Laundry Services & Products</h1>
+            <p>Quality, Trust, Customer Satisfaction, Integrity and Reliability — the pillars of our commitment to excellence.</p>
+            <div class="hero-buttons">
+                <a href="#products" class="btn">Explore Products</a>
+                <a href="#services" class="btn btn-outline">Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <span class="section-label">Who We Are</span>
+                <h2>About Us</h2>
+                <p>Learn more about our commitment to excellence in laundry services</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Trusted Name in the Laundry Industry</h3>
+                    <p>At AMICOL LAUNDRY MASTERS, we are dedicated to providing top-notch laundry services and products to our valued customers, with a commitment to quality, trust, customer satisfaction, integrity and reliability.</p>
+                    <p>We have established ourselves as a trusted name in the laundry industry by consistently delivering exceptional results and exceeding customer expectations.</p>
+                    <a href="#contact" class="btn btn-dark">Get In Touch</a>
+                </div>
+                <div class="about-image">
+                    <img src="Amicol.png" alt="Laundry Service">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission" id="mission">
+        <div class="container">
+            <div class="section-title">
+                <span class="section-label">Our Purpose</span>
+                <h2>Our Mission</h2>
+                <p>What drives us to deliver excellence every day</p>
+            </div>
+            <div class="mission-content">
+                <div class="mission-icon">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <p>To deliver exceptional laundry products and services that exceeds and respectfully satisfies our customers' expectations. We strive to produce a hassle-free experience in ensuring that your body, living environment and fabric ware hygiene are cared for with the utmost attention to details.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-title">
+                <span class="section-label">What We Offer</span>
+                <h2>Our Products</h2>
+                <p>High-quality laundry products to meet all your needs</p>
+            </div>
+            <div class="product-categories">
+                <button class="category-btn active" data-category="all">All Products</button>
+                <button class="category-btn" data-category="detergents">Detergents</button>
+                <button class="category-btn" data-category="soaps">Soaps</button>
+                <button class="category-btn" data-category="accessories">Accessories</button>
+                <button class="category-btn" data-category="personal">Personal Care</button>
+            </div>
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card" data-category="detergents">
+                    <div class="product-image">
+                        <img src="liquid.jpg" alt="Multi-purpose laundry liquid soap">
+                    </div>
+                    <div class="product-info">
+                        <h3>Multi-purpose Laundry Liquid Soap</h3>
+                        <p>Effective cleaning solution for all types of fabrics</p>
+                        <div class="product-tags">
+                            <span class="tag">Detergent</span>
+                            <span class="tag">All-purpose</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card" data-category="soaps">
+                    <div class="product-image">
+                        <img src="soaps.webp" alt="Soft Bath soap">
+                    </div>
+                    <div class="product-info">
+                        <h3>Soft Bath Soap</h3>
+                        <p>Gentle on skin with refreshing fragrance</p>
+                        <div class="product-tags">
+                            <span class="tag">Personal Care</span>
+                            <span class="tag">Bath</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card" data-category="detergents">
+                    <div class="product-image">
+                        <img src="booster.jpg" alt="Washer laundry booster">
+                    </div>
+                    <div class="product-info">
+                        <h3>Washer Laundry Booster</h3>
+                        <p>Enhances cleaning power to fabrics</p>
+                        <div class="product-tags">
+                            <span class="tag">Booster</span>
+                            <span class="tag">Oxidean</span>
+                            <span class="tag">Biz</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card" data-category="personal">
+                    <div class="product-image">
+                        <img src="gel.webp" alt="Shower Gel">
+                    </div>
+                    <div class="product-info">
+                        <h3>Shower Gel</h3>
+                        <p>Cool with refreshing and moistening effect</p>
+                        <div class="product-tags">
+                            <span class="tag">Personal Care</span>
+                            <span class="tag">Shower</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card" data-category="soaps">
+                    <div class="product-image">
+                        <img src="1.jpg" alt="Mar multi-purpose soap">
+                    </div>
+                    <div class="product-info">
+                        <h3>Mar Multi-purpose Soap</h3>
+                        <p>Variety of brands for all your cleaning needs</p>
+                        <div class="product-tags">
+                            <span class="tag">Amicol</span>
+                            <span class="tag">Sunlight</span>
+                            <span class="tag">White Star</span>
+                            <span class="tag">Dawa</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card" data-category="personal">
+                    <div class="product-image">
+                        <img src="lotion.webp" alt="Body Jelly and lotions creams">
+                    </div>
+                    <div class="product-info">
+                        <h3>Body Jelly and Lotions</h3>
+                        <p>Complete skin care solutions</p>
+                        <div class="product-tags">
+                            <span class="tag">Vaseline</span>
+                            <span class="tag">Nivea</span>
+                            <span class="tag">Fair &amp; Lovely</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="product-card" data-category="detergents">
+                    <div class="product-image">
+                        <img src="bleach.jpg" alt="Powdered detergents and bleach">
+                    </div>
+                    <div class="product-info">
+                        <h3>Powered Detergents and Bleach</h3>
+                        <p>Powerful cleaning for tough stains</p>
+                        <div class="product-tags">
+                            <span class="tag">Omo</span>
+                            <span class="tag">Surf</span>
+                            <span class="tag">Ariel</span>
+                            <span class="tag">Magic</span>
+                            <span class="tag">Jik</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="product-card" data-category="detergents">
+                    <div class="product-image">
+                        <img src="fabric.jpg" alt="Fabric softness">
+                    </div>
+                    <div class="product-info">
+                        <h3>Fabric Softener</h3>
+                        <p>Reduces static cling and makes clothes look soft</p>
+                        <div class="product-tags">
+                            <span class="tag">Downy</span>
+                            <span class="tag">Snuggle</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 9 -->
+                <div class="product-card" data-category="detergents">
+                    <div class="product-image">
+                        <img src="stain.webp" alt="Stain removers">
+                    </div>
+                    <div class="product-info">
+                        <h3>Stain Removers</h3>
+                        <p>Effective solutions for stubborn stains</p>
+                        <div class="product-tags">
+                            <span class="tag">Shout</span>
+                            <span class="tag">Vanish</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 10 -->
+                <div class="product-card" data-category="personal">
+                    <div class="product-image">
+                        <img src="sanitizer.webp" alt="Hand wash antibacterial sanitizers">
+                    </div>
+                    <div class="product-info">
+                        <h3>Hand Wash Antibacterial Sanitizers</h3>
+                        <p>Keep your hands clean and germ-free</p>
+                        <div class="product-tags">
+                            <span class="tag">Amicol</span>
+                            <span class="tag">Dettol</span>
+                            <span class="tag">Savlon</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 11 -->
+                <div class="product-card" data-category="personal">
+                    <div class="product-image">
+                        <img src="shampoo.webp" alt="Shampoo">
+                    </div>
+                    <div class="product-info">
+                        <h3>Shampoo</h3>
+                        <p>Hair care products for all hair types</p>
+                        <div class="product-tags">
+                            <span class="tag">Amicol</span>
+                            <span class="tag">Sun Silk</span>
+                            <span class="tag">Pantene</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 12 -->
+                <div class="product-card" data-category="accessories">
+                    <div class="product-image">
+                        <img src="pegs.jpg" alt="All kinds of laundry accessories">
+                    </div>
+                    <div class="product-info">
+                        <h3>Laundry Accessories</h3>
+                        <p>Complete range of laundry accessories</p>
+                        <div class="product-tags">
+                            <span class="tag">Baskets</span>
+                            <span class="tag">Racks</span>
+                            <span class="tag">Pegs</span>
+                            <span class="tag">Bags</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <span class="section-label">What We Do</span>
+                <h2>Our Services</h2>
+                <p>Comprehensive laundry solutions to meet your needs</p>
+            </div>
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <img src="detergent.jpg" width="300" height="300"></imgg>
+                    <h3>Detergent Making Training</h3>
+                    <p>Professional workshops and training sessions on detergent making</p>
+                    <a href="#contact" class="btn btn-dark">Learn More</a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <img src="ironing.png" width="300" height="300"></imgg>
+                    <h3>Ironing and Folding</h3>
+                    <p>Professional ironing and folding services for customers</p>
+                    <a href="#contact" class="btn btn-dark">Book Service</a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <img src="sewing.png" width="300" height="300"></imgg>
+                    <h3>Alterations and Repairs</h3>
+                    <p>Expert clothing alterations and repair services</p>
+                    <a href="#contact" class="btn btn-dark">Get Quote</a>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card">
+                    <img src="shoes.png" width="300" height="300"></imgg>
+                    <h3>Shoe Repair</h3>
+                    <p>Professional shoe repair and restoration services</p>
+                    <a href="#contact" class="btn btn-dark">Book Service</a>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card">
+                    <img src="suits.png" width="300" height="300"></imgg>
+                    <h3>Party/Wedding Garments Hire</h3>
+                    <p>Quality garments for special occasions available for hire</p>
+                    <a href="#contact" class="btn btn-dark">View Collection</a>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-card">
+                    <img src="drycleaning.png" width="300" height="300"></imgg>
+                    <h3>Dry Cleaning Services</h3>
+                    <p>Professional dry cleaning for clothes, shoes and delicate items</p>
+                    <a href="#contact" class="btn btn-dark">Book Service</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose" id="why-choose">
+        <div class="container">
+            <div class="section-title">
+                <span class="section-label">Our Advantage</span>
+                <h2>Why Choose Us</h2>
+                <p>What sets us apart from the rest</p>
+            </div>
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature">
+                    <i class="fas fa-star"></i>
+                    <h3>Quality Cleaning</h3>
+                    <p>Our state-of-art equipment and experienced staff ensure that your fabrics and body are hyper cleaned to perfection.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature">
+                    <i class="fas fa-th-large"></i>
+                    <h3>Variety of Services</h3>
+                    <p>Our scope of services and products are wide to facilitate our customers' satisfaction and time-saving.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature">
+                    <i class="fas fa-users"></i>
+                    <h3>Experienced Staff</h3>
+                    <p>Our experienced and trained staff deliver quality results, and our friendly responsive customer support team is always there to help.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature">
+                    <i class="fas fa-truck"></i>
+                    <h3>Convenience</h3>
+                    <p>Pickup and delivery options with affordable prices without compromising on quality.</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Eco-Friendly</h3>
+                    <p>Our commitment to reduce environmental footprint through eco-friendly practices.</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="feature">
+                    <i class="fas fa-clock"></i>
+                    <h3>Flexible Hours</h3>
+                    <p>Extended business hours to accommodate your schedule, including weekends.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <span class="section-label">Get In Touch</span>
+                <h2>Contact Us</h2>
+                <p>Get in touch with us for any inquiries or to book our services</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Physical Address</h3>
+                            <p>Starbex petrol station Wanyange, Jinja-Kampala highway</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone Numbers</h3>
+                            <p><a href="tel:0753760168" style="text-decoration: none; color:rgb(15, 19, 29);">Call: 0753760168</a></p>
+                            <p>WhatsApp: 0779010438 / 0753760168</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email Address</h3>
+                            <p><a href="mailto:info@amicollaundrymasters.com" style="text-decoration: none;">info@amicollaundrymasters.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Business Hours</h3>
+                            <p>Monday - Saturday: 8:00 AM - 10:00 PM</p>
+                            <p>Sunday: 1:00 PM - 10:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required="">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" required="">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required="">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required=""></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Floating Action Buttons -->
+    <div class="floating-buttons">
+        <a href="https://www.google.com/maps/search/?api=1&query=Stabex+petrol+station+Wanyange+Jinja" target="_blank" class="floating-btn location-btn" aria-label="Find us on Google Maps" title="Find us on Google Maps">
+            <i class="fas fa-map-marker-alt"></i>
+        </a>
+        <a href="https://wa.me/256779010438" target="_blank" class="floating-btn whatsapp-btn" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column footer-brand">
+                    <h3>AMICOL LAUNDRY MASTERS</h3>
+                    <p>Your trusted partner for professional laundry services and quality products.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#why-choose">Why Choose Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="#">Detergents</a></li>
+                        <li><a href="#">Soaps</a></li>
+                        <li><a href="#">Fabric Softeners</a></li>
+                        <li><a href="#">Stain Removers</a></li>
+                        <li><a href="#">Personal Care</a></li>
+                        <li><a href="#">Accessories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Detergent Making Training</a></li>
+                        <li><a href="#">Ironing and Folding</a></li>
+                        <li><a href="#">Alterations and Repairs</a></li>
+                        <li><a href="#">Shoe Repair</a></li>
+                        <li><a href="#">Garment Hire</a></li>
+                        <li><a href="#">Dry Cleaning</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 AMICOL LAUNDRY MASTERS. All Rights Reserved. Developed by CKS-Tech</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('nav').classList.toggle('active');
+            const icon = this.querySelector('i');
+            if (document.getElementById('nav').classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+      
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                
+                document.getElementById('nav').classList.remove('active');
+                const icon = document.getElementById('menuToggle').querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+
+     
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+    
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const productCards = document.querySelectorAll('.product-card');
+
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                
+                this.classList.add('active');
+                
+                const category = this.getAttribute('data-category');
+                
+                productCards.forEach(card => {
+                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                        card.style.display = 'block';
+                       
+                        card.style.animation = 'fadeInUp 0.5s ease forwards';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+            
+        
+            const formContainer = document.querySelector('.contact-form');
+            formContainer.innerHTML = `
+                <div style="text-align: center; padding: 40px 30px;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #10b981, #34d399); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px;">
+                        <i class="fas fa-check" style="font-size: 2rem; color: white;"></i>
+                    </div>
+                    <h3 style="margin-bottom: 12px; color: var(--primary); font-size: 1.5rem;">Thank You, ${name}!</h3>
+                    <p style="margin-bottom: 24px; color: var(--text-secondary);">Your message has been sent successfully. We'll get back to you soon.</p>
+                    <button class="btn btn-dark" onclick="location.reload()">Send Another Message</button>
+                </div>
+            `;
+        });
+        const animateOnScroll = function() {
+            const elements = document.querySelectorAll('.feature, .service-card, .product-card');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+
+        
+        document.querySelectorAll('.feature, .service-card, .product-card').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        });
+
+     
+        window.addEventListener('scroll', animateOnScroll);
+       
+        setTimeout(animateOnScroll, 100);
+    </script>
+</body>
+</html>
